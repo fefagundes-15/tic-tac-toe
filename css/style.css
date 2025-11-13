@@ -1,0 +1,118 @@
+:root {
+    --squarePlayedColor: #97c9d8;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    gap: 1rem;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #f4f4f9;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+
+.board {
+    background-color: transparent;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: .5rem;
+}
+
+.square {
+    background-color: #bfd9e2;
+    padding: 3rem;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, .1);
+}
+
+.cross {
+    background-image: url(../images/x.png);
+    background-position: center;
+    background-size: contain;
+}
+
+.crossHover {
+    background-image: url(../images/x.png);
+    background-color: #a5ccd8;
+    opacity: .5;
+    background-position: center;
+    background-size: contain;
+}
+
+.circle {
+    background-image: url(../images/circle.png);
+    background-position: center;
+    background-size: contain;
+}
+
+.circleHover {
+    background-image: url(../images/circle.png);
+    background-color: var(--squarePlayedColor);
+    opacity: .5;
+    background-position: center;
+    background-size: contain;
+}
+
+.square.cross,
+.square.circle {
+    background-color: var(--squarePlayedColor);
+}
+
+.square.cross.crossHover,
+.square.circle.circleHover {
+    opacity: 1;
+}
+
+.hide {
+    display: none;
+}
+
+.victory {
+    font-size: 1.5rem;
+    color: #a52a2a;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btnRestart {
+    background-color: #5f9ea0;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transform: scale(1);
+}
+
+.btnRestart:hover {
+    background-color: color-mix(in srgb, #5f9ea0, #000 20%);
+}
+
+.btnRestart:active {
+    transform: scale(0.95);
+}
